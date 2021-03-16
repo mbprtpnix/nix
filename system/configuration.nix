@@ -86,6 +86,7 @@
      wget
      vim
      firefox
+     brave
      networkmanager
      networkmanagerapplet
      leafpad
