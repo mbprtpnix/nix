@@ -85,7 +85,6 @@
      rclone
      mononoki
      fantasque-sans-mono
-     kdeplasma-addons
      xclip
      gnupg
    ];

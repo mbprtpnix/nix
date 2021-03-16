@@ -37,5 +37,10 @@
     git
     git-crypt
     gnupg
+    bat
+    lsd
+    exa
+    ripgrep
   ];
+
 }
