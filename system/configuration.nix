@@ -17,7 +17,17 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
 
+  # Enable NetworkManager
   networking.networkmanager.enable = true;
+
+  # Enable non-free
+  nixpkgs.config.allowUnfree = true;
+
+  # Video
+  services.xserver.videoDrivers = [ "intel" "ati" "amdgpu" ];
+
+  # Docker
+  virtualisation.docker.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Bucharest";
@@ -51,7 +61,7 @@
 
   # Configure keymap in X11
   services.xserver.layout = "gb";
-  # services.xserver.xkbOptions = "eurosign:e";
+  services.xserver.xkbOptions = "eurosign:e";
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -67,7 +77,7 @@
   users.users.master = {
      isNormalUser = true;
      initialPassword = "passw000rd";
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "docker" "networkmanager" "audio" "video" ]; # Enable ‘sudo’ for the user.
    };
 
   # List packages installed in system profile. To search, run:
